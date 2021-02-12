@@ -1,0 +1,32 @@
+<div class="container">
+    <h1>Corona Virus tracker app </h1>
+
+    <label> Country </label>
+    <select (change)="getCountry($event.target.value)">
+        <option  *ngFor="let country of countries" value={{country.Slug}}>{{country.Country}}</option>
+    </select>
+
+    <button (click)="getCoronaData()">Get Corona Data</button>
+
+    <h1>confirmed {{confirmed}}</h1>
+    <h1>recovered {{recovered}}</h1>
+    <h1>deaths {{deaths}}</h1>
+
+  </div>
+  <div class="container">
+    <!-- <div class="pie" [chart]="donutChart"></div>
+    <div class="area" [chart]="areaChart"></div>
+    <div class="bar" [chart]="barChart"></div>
+    <div class="one-line-bar" [chart]="oneLineBar"></div>
+    <div class="pie" [chart]="pieChart"></div> -->
+
+
+  </div>
+
+  <app-pie-chart [datatable]="datatable"></app-pie-chart>
+
+  <router-outlet></router-outlet>
+
+
+
+
