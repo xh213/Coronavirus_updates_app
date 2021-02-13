@@ -3,10 +3,9 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HttpClientModule } from '@angular/common/http';
-// import { HighchartsChartComponent } from 'highcharts-angular';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
- import { ChartModule } from 'angular-highcharts';
+import { GoogleChartsModule } from 'angular-google-charts';
 
 
 @NgModule({
@@ -18,9 +17,8 @@ import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    // HighchartsChartComponent,
-    ChartModule
-    // HttpClient
+    GoogleChartsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

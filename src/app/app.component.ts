@@ -1,12 +1,10 @@
-import { pieChartOptions } from './helpers/pieChartOptions';
-import { donutChartsOptions } from './helpers/donutChartsOptions';
+// import { pieChartOptions } from './helpers/pieChartOptions';
+// import { donutChartsOptions } from './helpers/donutChartsOptions';
 import { CoronaService } from './services/corona.service';
 import { Component, OnInit } from '@angular/core';
-import * as Highcharts from 'highcharts';
-import { Chart } from 'angular-highcharts';
-import { areaChartOptions } from './helpers/areaChartsOptions';
-import { barChart } from './helpers/barChartsOptions';
-import { oneLineBar } from './helpers/oneLineBarOptions';
+// import { areaChartOptions } from './helpers/areaChartsOptions';
+// import { barChart } from './helpers/barChartsOptions';
+// import { oneLineBar } from './helpers/oneLineBarOptions';
 
 
 @Component({
