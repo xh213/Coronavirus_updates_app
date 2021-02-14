@@ -14,10 +14,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit{
 
+  countrySelected = false;
+  upCountry : any;
+
+  totalConfirmed: number
+  totalRecovered: number
+  totalDeaths: number
+
   countries: any[] = []
+  countriesTable: string[] = []
+  // citiesTable: string[] = []
   datatable = []
   raw: any
   country: any
+  // city: any
   confirmed: number
   recovered: number
   deaths: number
@@ -28,8 +38,6 @@ export class AppComponent implements OnInit{
 
   ngOnInit(): void
   {
-
-
 
     this.coronaService.getContinent().subscribe((data) => {
       this.raw = data
@@ -44,10 +52,29 @@ export class AppComponent implements OnInit{
 
     })
 
-
     this.coronaService.getCountries().subscribe(data=>{
       // console.log('data in app component'+data)
       this.countries = data
+
+    })
+
+    this.coronaService.getCountries().subscribe(data=>{
+      // console.log('data in app component'+data)
+      data.forEach(item => {
+        this.countriesTable.push(item.Country)
+      });
+
+    })
+
+    this.coronaService.getWorldData().subscribe(data=>{
+      this.totalConfirmed = data.TotalConfirmed
+      console.log(this.totalConfirmed)
+
+      this.totalRecovered = data.TotalRecovered
+      console.log(this.totalRecovered)
+
+      this.totalDeaths = data.TotalDeaths
+      console.log(this.totalDeaths)
     })
 
   }
@@ -61,12 +88,25 @@ export class AppComponent implements OnInit{
       this.recovered = data[index].Recovered
       this.deaths = data[index].Deaths
     })
+
+    this.countrySelected = !this.countrySelected
   }
 
   getCountry(country: any){
-    this.country = country // country that user selected
 
+    this.country = country // country that user selected
+    this.upCountry = country.charAt(0).toUpperCase()+ country.slice(1);
   }
+
+
+  // getCity(city: any) {
+  //   this.city = city
+  // }
+
+  // getCityData() {}
+
+  //   this.coronaService.getCity(this.country, this.city).subscribe((data) => {
+  // }
 
 
 

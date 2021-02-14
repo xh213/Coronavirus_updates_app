@@ -6,12 +6,20 @@ import { AppComponent } from './app.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PieChartComponent } from './charts/pie-chart/pie-chart.component';
 import { GoogleChartsModule } from 'angular-google-charts';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { ContinentsComponent } from './continents/continents.component';
+import { CollegeComponent } from './college/college.component';
+import { CollegeCasesComponent } from './college-cases/college-cases.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PieChartComponent
+    PieChartComponent,
+    NavBarComponent,
+    ContinentsComponent,
+    CollegeComponent,
+    CollegeCasesComponent
   ],
   imports: [
     BrowserModule,

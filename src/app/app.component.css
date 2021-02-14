@@ -1,4 +1,4 @@
-.container {
+/* .container {
   display: grid;
   padding: 20px;
   grid-template-columns: repeat(auto-fit, minmax(350px, 500px));
@@ -9,4 +9,8 @@
 .container > * {
   border-radius: 20px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+} */
+.cbutton{
+  width: 200px;
+  height: 30px;
 }

@@ -1,0 +1,162 @@
+
+<div class="jumbotron bg-dark text-center" >
+
+  <!-- <button class="ui inverted button" style="float: left;" (click)="back()">
+    <i class="arrow circle left icon"></i>
+    Back
+  </button> -->
+
+  <br/><br/>
+
+  <h1 class="display-4 dj-title" style="color: orange;">Colleges in Virginia</h1>
+  <hr style="background-color: lightgrey;">
+
+  <div>
+    <div class="ui inverted segment">
+      <div class="ui inverted statistic">
+        <div class="value">
+          54
+        </div>
+        <div class="label">
+          Inverted
+        </div>
+      </div>
+      <div class="ui red inverted statistic">
+        <div class="value">
+          {{ totalColConfirmed }}
+        </div>
+        <div class="label">
+          Confirmed
+        </div>
+      </div>
+      <div class="ui green inverted statistic">
+        <div class="value">
+          {{ mason }}
+        </div>
+        <div class="label">
+          Mason
+        </div>
+      </div>
+      <div class="ui yellow inverted statistic">
+        <div class="value">
+          {{ uva }}
+        </div>
+        <div class="label">
+          University of Virginia
+        </div>
+      </div>
+      <div class="ui olive inverted statistic">
+        <div class="value">
+          {{ vcu }}
+        </div>
+        <div class="label">
+          Virginia Commonwealth<br/>
+             University
+        </div>
+      </div>
+        <div class="ui orange inverted statistic">
+        <div class="value">
+          {{ vtech }}
+        </div>
+        <div class="label">
+          Virginia Tech
+        </div>
+      </div>
+      <div class="ui teal inverted statistic">
+        <div class="value">
+          {{ umw }}
+        </div>
+        <div class="label">
+          University of Mary
+          <br/>Washington
+        </div>
+      </div>
+      <div class="ui blue inverted statistic">
+        <div class="value">
+          {{ odu }}
+        </div>
+        <div class="label">
+          Old Dominion University
+        </div>
+      </div>
+      <div class="ui violet inverted statistic">
+        <div class="value">
+          {{ jmu }}
+        </div>
+        <div class="label">
+          James Madison University
+        </div>
+      </div>
+      <div class="ui purple inverted statistic">
+        <div class="value">
+          23
+        </div>
+        <div class="label">
+          Purple
+        </div>
+      </div>
+      <div class="ui pink inverted statistic">
+        <div class="value">
+          15
+        </div>
+        <div class="label">
+          Pink
+        </div>
+      </div>
+      <div class="ui brown inverted statistic">
+        <div class="value">
+          36
+        </div>
+        <div class="label">
+          Brown
+        </div>
+      </div>
+      <div class="ui grey inverted statistic">
+        <div class="value">
+          49
+        </div>
+        <div class="label">
+          Grey
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <br/> <br/>
+  <!-- <div class="mx-auto">
+    <div class="form-group col-lg-5 mx-auto">
+      <label for="c" style="color: lightgrey;">Select Country</label>
+
+      <select name="" class="form-control" #input id="c" (change)="updateValues(input.value)">
+          <option value="{{con}}" *ngFor="let con of countries">{{ con }}</option>
+      </select>
+
+      <input type="text" name="college" list="countryNames" class="form-control" #input (change)="updateValues(input.value)">
+      <datalist id="countryNames">
+        <option value="{{con}}" *ngFor="let con of countries">{{ con }}</option>
+      </datalist>
+
+  </div> -->
+
+
+  <div class="form-group col-lg-5 mx-auto">
+    <label for="c" style="color: lightgrey;">Select College</label>
+
+    <input type="text" placeholder="select..." name="college" list="collegenames" class="form-control" #inp (change)="updateStates(inp.value)">
+      <datalist id="collegenames">
+        <option value="{{college}}" *ngFor="let college of colleges">{{ college }}</option>
+      </datalist>
+
+    <app-college-cases
+             *ngIf="selectedValue"
+             [totalCollege]="totalCollege"
+             [college]="college"
+             [state]="state"
+             [city]="city"
+             [county]="county"
+
+    ></app-college-cases>
+
+
+</div>

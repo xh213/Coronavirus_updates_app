@@ -1,19 +1,144 @@
-<div class="container">
-    <h1>Corona Virus tracker app </h1>
+<div class="ui inverted segment">
 
-    <label> Country </label>
-    <select (change)="getCountry($event.target.value)">
-        <option  *ngFor="let country of countries" value={{country.Slug}}>{{country.Country}}</option>
-    </select>
+  <h1> Corona Virus Tracker </h1>
 
-    <button (click)="getCoronaData()">Get Corona Data</button>
 
-    <h1>confirmed {{confirmed}}</h1>
-    <h1>recovered {{recovered}}</h1>
-    <h1>deaths {{deaths}}</h1>
+  <div class="jumbotron bg-dark text-center" >
+
+    <h1 class="ui header orange"> World Dashboard </h1>
+    <div class="row">
+
+      <div class="card col p-3 m-3 ui inverted segment">
+        <div class="ui red inverted statistic">
+          <div class="label">
+            <h3>Total Confirmed</h3>
+          </div>
+          <div class="value orange">
+            {{totalConfirmed}}
+          </div>
+        </div>
+      </div>
+
+        <div class="card col p-3 m-3 ui inverted segment">
+          <div class="ui yellow inverted statistic">
+            <div class="label">
+              <h3>Total Recovered</h3>
+            </div>
+            <div class="value">
+              {{totalRecovered}}
+            </div>
+          </div>
+        </div>
+
+        <div class="card col p-3 m-3 ui inverted segment">
+          <div class="ui violet inverted statistic">
+            <div class="label">
+              <h3>Total Deaths</h3>
+            </div>
+            <div class="value orange">
+              {{totalDeaths}}
+            </div>
+          </div>
+        </div>
+
+    </div>
+  </div>
+
+<hr/>
+
+  <div class="jumbotron bg-dark text-center" >
+
+    <!-- <input type="text" name="college" list="collegenames" class="form-control" #inp (change)="updateStates(inp.value)">
+      <datalist id="collegenames">
+        <option value="{{college}}" *ngFor="let college of colleges">{{ college }}</option>
+      </datalist> -->
+
+  <div class="input-group mb-3">
+    <label class="input-group-text mr-3 mt-4" for="inputGroupSelect01">Country</label>
+
+    <input type="text" placeholder="Select" name="country" list="countries" class="form-select mt-4" (change)="getCountry($event.target.value)">
+        <datalist id="countries">
+          <option value="{{country}}" *ngFor="let country of countriesTable">{{ country }}</option>
+        </datalist>
+
+    <!-- </select> -->
+    <button class="ui inverted orange button  mt-4 ml-2" (click)="getCoronaData()" >Get Corona Data</button>
 
   </div>
-  <div class="container">
+
+  <!-- <div class="input-group mb-3">
+    <label class="input-group-text mr-3 mt-4" for="inputGroupSelect01">City</label>
+
+    <input type="text" name="country" list="countries" class="form-select mt-4" (change)="getCity($event.target.value)">
+        <datalist id="countries">
+          <option value="{{city}}" *ngFor="let city of cities">{{ city }}</option>
+        </datalist>
+
+    </select>
+    <button class="ui inverted orange button  mt-4 ml-2" (click)="getCoronaData()" >Get Corona Data</button>
+
+  </div> -->
+
+
+  <!-- <button class="btn btn-primary" (click)="getCoronaData()" >Get Corona Data</button> -->
+
+    <!-- <h3>confirmed: {{confirmed}}</h3>
+    <h3>recovered: {{recovered}}</h3>
+    <h3>deaths:  {{deaths}}</h3> -->
+
+    <div class="row">
+      <h1 class="ui header orange">{{upCountry}}</h1>
+    </div>
+
+    <div class="row" *ngIf='countrySelected'>
+
+      <div class="card col p-3 m-3 ui inverted segment">
+        <div class="ui red inverted statistic">
+          <div class="label">
+            <h3>Confirmed</h3>
+          </div>
+          <div class="value orange">
+            {{confirmed}}
+          </div>
+        </div>
+      </div>
+
+        <div class="card col p-3 m-3 ui inverted segment">
+          <div class="ui yellow inverted statistic">
+            <div class="label">
+              <h3>Recovered</h3>
+            </div>
+            <div class="value">
+              {{recovered}}
+            </div>
+          </div>
+        </div>
+
+        <div class="card col p-3 m-3 ui inverted segment">
+          <div class="ui violet inverted statistic">
+            <div class="label">
+              <h3>Deaths</h3>
+            </div>
+            <div class="value orange">
+              {{deaths}}
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="card col p-3 m-3 ui inverted segment">
+          <div class="ui green inverted statistic">
+            <div class="label">
+              <h3>Active</h3>
+            </div>
+            <div class="value orange">
+              {{totalActive}}
+            </div>
+          </div>
+        </div> -->
+
+    </div>
+
+
     <!-- <div class="pie" [chart]="donutChart"></div>
     <div class="area" [chart]="areaChart"></div>
     <div class="bar" [chart]="barChart"></div>
@@ -22,7 +147,49 @@
 
 
   </div>
-  <app-pie-chart></app-pie-chart>
+
+
+
+    <a class="ui orange tag label mt-2 ml-2">Continents</a>
+
+
+    <h2 class="ui header">
+      <i class="plug icon"></i>
+      <div class="content">
+        Continents
+      </div>
+    </h2>
+    <div class="ui buttons right floated">
+      <a class="ui orange tag label mt-2 ml-3">Raw files</a>
+    </div>
+
+    <div class="ui buttons right floated">
+      <button class="ui button">
+        <i class="file alternate icon"></i>
+        <a href="https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/01-01-2021.csv">Raw 1</a>
+      </button>
+      <button class="ui button">
+        <i class="file alternate icon"></i>
+        <a href="https://raw.githubusercontent.com/nytimes/covid-19-data/master/colleges/colleges.csv">Raw 2</a>
+      </button>
+    </div>
+
+    <h4 class="ui orange inverted header">Number of cases in different continents</h4>
+
+    <app-continents></app-continents>
+
+    <a class="ui orange tag label mt-2 ml-2">Colleges</a>
+
+    <h4 class="ui orange inverted header">Number of cases in different schools accross United States</h4>
+
+    <app-college></app-college>
+
+    <app-pie-chart></app-pie-chart>
+
+
+</div>
+
+
   <!-- <app-pie-chart [datatable]="datatable"></app-pie-chart> -->
   <router-outlet></router-outlet>
 
