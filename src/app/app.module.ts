@@ -10,6 +10,8 @@ import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { ContinentsComponent } from './continents/continents.component';
 import { CollegeComponent } from './college/college.component';
 import { CollegeCasesComponent } from './college-cases/college-cases.component';
+import { LineChartComponent } from './line-chart/line-chart.component';
+import { BarChartsComponent } from './charts/bar-charts/bar-charts.component';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { CollegeCasesComponent } from './college-cases/college-cases.component';
     NavBarComponent,
     ContinentsComponent,
     CollegeComponent,
-    CollegeCasesComponent
+    CollegeCasesComponent,
+    LineChartComponent,
+    BarChartsComponent
   ],
   imports: [
     BrowserModule,

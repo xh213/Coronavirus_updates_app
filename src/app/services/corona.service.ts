@@ -26,6 +26,11 @@ export class CoronaService {
     return this.http.get<any>(url);
   }
 
+  getWorldRealTimeData(): Observable<any>{
+    const url = `https://api.covid19api.com/summary`
+    return this.http.get<any>(url);
+  }
+
   getContinent(): Observable<any>{
     const url = `https://corona.lmao.ninja/v2/continents?yesterday&sort`
     return this.http.get<any>(url);

@@ -20,6 +20,8 @@ export class PieChartComponent implements OnInit, AfterViewInit {
     const options = {
       // title: 'Pie Cart',
       legend: {position: 'top'},
+      width: 700,
+      height: 350,
       animation:{
                 duration: 1000,
                 easing: 'out',
