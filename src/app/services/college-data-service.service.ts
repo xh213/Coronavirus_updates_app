@@ -48,10 +48,6 @@ export class CollegeDataServiceService {
           }else{
             raw[col_cases.college] = col_cases;
           }
-
-          // raw[col_cases.college] = temp;
-
-          // console.log(cols)
         })
 
         // console.log('raw='+raw)

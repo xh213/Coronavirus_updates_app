@@ -12,6 +12,8 @@ import { CollegeComponent } from './college/college.component';
 import { CollegeCasesComponent } from './college-cases/college-cases.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { BarChartsComponent } from './charts/bar-charts/bar-charts.component';
+import { TablesComponent } from './tables/tables.component';
+// import { DataTableModule } from 'angular-6-datatable';
 
 
 @NgModule({
@@ -23,7 +25,9 @@ import { BarChartsComponent } from './charts/bar-charts/bar-charts.component';
     CollegeComponent,
     CollegeCasesComponent,
     LineChartComponent,
-    BarChartsComponent
+    BarChartsComponent,
+    TablesComponent,
+    // DataTableModule,
   ],
   imports: [
     BrowserModule,

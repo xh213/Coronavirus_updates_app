@@ -2,6 +2,7 @@
 // import { donutChartsOptions } from './helpers/donutChartsOptions';
 import { CoronaService } from './services/corona.service';
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 // import { areaChartOptions } from './helpers/areaChartsOptions';
 // import { barChart } from './helpers/barChartsOptions';
 // import { oneLineBar } from './helpers/oneLineBarOptions';
@@ -50,9 +51,18 @@ export class AppComponent implements OnInit{
   TotalDeaths: any
   NewRecovered: any
   TotalRecovered: any
-  
 
-  countrySub = false
+
+  countrySub = false;
+
+
+  tableByNumber: any[]=[]
+  maxCases: any[] = []
+  topTen: any[] = []
+
+  topListArray: any[] = []
+
+
 
   title = 'covid-api';
 
@@ -100,7 +110,11 @@ export class AppComponent implements OnInit{
       console.log(this.totalDeaths)
     })
 
+
+    
+
   }
+
 
   getCoronaData(){
     // alert(this.country)
@@ -139,6 +153,10 @@ export class AppComponent implements OnInit{
       })
     })
   }
+
+
+
+
 
   getCountry(country: any){
 

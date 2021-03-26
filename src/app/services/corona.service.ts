@@ -1,6 +1,7 @@
+import { TableData } from './../tables/TableData';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
-
+import { map } from 'rxjs/operators'
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -30,6 +31,18 @@ export class CoronaService {
     const url = `https://api.covid19api.com/summary`
     return this.http.get<any>(url);
   }
+
+  // getWorldRealTimeData(): Observable<any>{
+  //   const url = `https://api.covid19api.com/summary`
+  //   return this.http.get(url,{responseType: 'text'}).pipe(
+  //     map(res=>{
+
+  //       let tableData : TableData[] = [];
+
+
+  //     })
+  //   );
+  // }
 
   getContinent(): Observable<any>{
     const url = `https://corona.lmao.ninja/v2/continents?yesterday&sort`
