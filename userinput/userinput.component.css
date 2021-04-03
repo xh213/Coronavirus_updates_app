@@ -1,0 +1,15 @@
+
+section{
+    width: 20%;
+}
+.register{
+    padding-right: 30px;
+}
+.register p{
+    color:coral;
+    line-height: 25px;
+    opacity: 0.9;
+}
+form dev{
+    flex-direction: column;
+}
