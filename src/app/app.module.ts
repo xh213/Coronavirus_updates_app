@@ -13,6 +13,7 @@ import { CollegeCasesComponent } from './college-cases/college-cases.component';
 import { LineChartComponent } from './line-chart/line-chart.component';
 import { BarChartsComponent } from './charts/bar-charts/bar-charts.component';
 import { TablesComponent } from './tables/tables.component';
+import { UserinputComponent } from './userinput/userinput.component';
 // import { DataTableModule } from 'angular-6-datatable';
 
 
@@ -27,6 +28,7 @@ import { TablesComponent } from './tables/tables.component';
     LineChartComponent,
     BarChartsComponent,
     TablesComponent,
+    UserinputComponent
     // DataTableModule,
   ],
   imports: [
