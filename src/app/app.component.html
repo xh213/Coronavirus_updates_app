@@ -1,7 +1,7 @@
 <div class="ui inverted segment">
 
   <h1> Corona Virus Tracker </h1>
-
+  <app-nav-bar></app-nav-bar>
   <div class="float-right" >
     <button class="ui circular facebook icon button">
       <i class="facebook icon"></i>
@@ -259,15 +259,15 @@
 
 
 
-    <a class="ui orange tag label mt-2 ml-2">Continents</a>
-
-
-    <h2 class="ui header">
+    <h2 id="section-continents" class="ui header">
       <i class="plug icon"></i>
       <div class="content">
         Continents
       </div>
     </h2>
+
+    <a class="ui orange tag label mt-2 ml-2">Continents</a>
+
     <div class="ui buttons right floated">
       <a class="ui orange tag label mt-2 ml-3">Raw files</a>
     </div>
@@ -287,7 +287,7 @@
 
     <app-continents></app-continents>
 
-    <h2 class="ui header">
+    <h2 id="section-colleges" class="ui header">
       <i class="university icon"></i>
       <div class="content">
         Colleges
@@ -301,6 +301,18 @@
     <app-college></app-college>
 
     <!-- <app-tables></app-tables> -->
+    <h2 id="section-register" class="ui header">
+      <i class="bell icon"></i>
+      <div class="content">
+        Register
+      </div>
+    </h2>
+
+    <a class="ui orange tag label mt-2 ml-2">Register</a>
+
+    <h4 class="ui orange inverted header">Sign up for notification about further outbreak of COVID-19 </h4>
+    <app-userinput></app-userinput>
+    <a href="#">Jump to Top</a>
 
 </div>
 
