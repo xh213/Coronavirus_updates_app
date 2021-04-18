@@ -13,6 +13,52 @@
 <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="module" type="text/javascript" src="./assets/userinput.js"> </script>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.888.0.min.js"></script>
+<script>
+ //import * as AWS from 'aws-sdk';
+ function sendMail(inputEmail){
+  // Load the AWS SDK for Node.js
+  console.log('in sendmail email: ', inputEmail);
+  // var AWS = require('aws-sdk');
+  //import * as AWS from 'aws-sdk';
+  //const credentials = new AWS.CognitoIdentityCredentials({profile: 'sns_profile'});
+  AWS.config.update({
+    accessKeyId: 'AKIAQX5HSACZOJEC6OXC',
+    secretAccessKey: '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',
+    region: 'us-east-2'
+  });
+  console.log('after config: ', inputEmail);
+  const sns = new AWS.SNS();
+
+  console.log('after sns: ', inputEmail);
+  // AWS.config.update({ credentials: credentials, region: 'us-east-2'});
+
+  // Create subscribe/email parameters
+  var params = {
+    Protocol: 'EMAIL', /* required */
+    TopicArn: 'arn:aws:sns:us-east-2:051354140850:CoronaVirusApp', /* required */
+    Endpoint: inputEmail
+    //Endpoint: "nhbamemberaccess@gmail.com"
+  };
+
+  console.log('after params: ', inputEmail);
+  // Create promise and SNS service object
+  var subscribePromise = new AWS.SNS({apiVersion: '2010-03-31'}).subscribe(params).promise();
+
+  console.log('after subpromise: ', inputEmail);
+
+  // Handle promise's fulfilled/rejected states
+  subscribePromise.then(
+    function(data) {
+      console.log("Subscription ARN is " + data.SubscriptionArn);
+    }).catch(
+      function(err) {
+      console.error(err, err.stack);
+    });
+}
+
+</script>
 
 <!-- Bootstrap -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">

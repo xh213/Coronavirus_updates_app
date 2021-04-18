@@ -1,0 +1,95 @@
+<!-- <head>
+  <script src = ".../app/userinput/userinput.js"> </script>
+</head> -->
+<div class="jumbotron bg-dark" >
+
+    <!--
+    <div class="input-group col-lg-5 mx-auto">
+        <span class="input-group-text" id="inputGroup-sizing-default">Default</span>
+        <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+    </div>
+    -->
+    <!--
+    <div class="form-group col-lg-5 mx-auto">
+
+         <label for="c" style="color: lightgrey;">Select College</label>
+
+        <input type="text" placeholder="First Name" name="" class="form-control"><br>
+        <input type="text" placeholder="Last Name" name="" class="form-control"><br>
+        <input type="text" placeholder="123456@email.com" name="" class="form-control"><br>
+        <input type="text" placeholder="001-234-567" name="" class="form-control"><br>
+
+        <input type="submit"  name="" class="form-control"><br>
+
+    </div>
+    -->
+
+    <!--
+    <form>
+        <div>
+            First Name:<br>
+            <input type="text" placeholder="First Name">
+            <span></span>
+        </div>
+        <div>
+            Last Name:<br>
+            <input type="text" placeholder="Last Name">
+            <span></span>
+        </div>
+        <div>
+            Email:<br>
+            <input type="text" placeholder="123456@email.com">
+            <span></span>
+        </div>
+        <div>
+            Phone Number:<br>
+            <input type="text" placeholder="123456789">
+            <span></span>
+        </div>
+        <br>
+        <input type="submit" value="Submit">
+      </form>
+    -->
+
+<section class = register>
+    <p>
+        Below you can sign up to recieve either an email that will let you know which areas have a spike in the COVID outbreak.
+    </p><br>
+    <form>
+        <div>
+          <label for="inputFirstName" class="form-label">First Name</label>
+          <input type="text" class="form-control" id="inputFirstName">
+          <span></span>
+        </div>
+        <div>
+          <label for="inputLastName" class="form-label">Last Name</label>
+          <input type="text" class="form-control" id="inputLastName">
+          <span></span>
+        </div>
+        <div>
+          <label for="inputEmail" class="form-label">Email</label>
+          <input type="text" class="form-control" id="inputEmail" placeholder="optional" name="inputEmail" #inputEmail>
+          <span></span>
+        </div>
+        <!--<div>
+          <label for="inputPhoneNumber" class="form-label">Phone Number</label>
+          <input type="text" class="form-control" id="inputPhoneNumber" placeholder="optional">
+          <span></span>
+        </div>-->
+        <br>
+        <div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck">
+            <label class="form-check-label" for="gridCheck">
+              I agree to submit
+            </label>
+            <span></span>
+          </div>
+        </div>
+        <div>
+          <button type="submit" class="ui inverted orange button  mt-4 ml-2" (click) = 'onSubmit(inputEmail.value)'>Submit</button>
+          <!-- <button type="submit" class="ui inverted orange button  mt-4 ml-2" (click) = 'sendMail(inputEmail.value)'>Submit</button> -->
+        </div>
+      </form>
+</section>
+</div>
